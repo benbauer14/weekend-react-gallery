@@ -1,7 +1,21 @@
 function PictureFrameItem (props){
+
+let picture = true;
+let display = ''
+
+    const togglePicture = () =>{
+        picture = !picture
+    }
+
+    const pictureOrText = () =>{
+
+    }
+
     return(
         <>
-        <img width='100px' src={props.path} />
+        <div className="frame">
+        <img height='300px' src={props.path}  />
+        </div>
         </>
     )
 }
