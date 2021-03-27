@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 function PictureFrameItem (props){
 
 let [picture, setPicture] =  useState(true)
-
+let [love, setLove] = useState(props.likes)
 
     const togglePicture = () =>{
         picture = setPicture(!picture)
@@ -22,9 +22,9 @@ let [picture, setPicture] =  useState(true)
     }
 
     const loveClick = () => {
-        axios.put('/gallery/like/' + props.id).then((response) =>{
-            console.log('back from put', response)
-            setLove(love + 1)
+        axios.put('/gallery/like/?id=' + props.id + "&likes="+love).then((response) =>{
+            console.log('back from put. Likes are:', response)
+            setLove(response.data)
         }).catch((err) =>{
             console.log(err)
         })
@@ -44,7 +44,7 @@ let [picture, setPicture] =  useState(true)
           }
 
     }
-    const [love, setLove] = useState(props.likes)
+
 
     return(
         <>
