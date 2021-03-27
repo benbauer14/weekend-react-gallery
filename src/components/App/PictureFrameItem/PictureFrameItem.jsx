@@ -34,7 +34,7 @@ let [picture, setPicture] =  useState(true)
 
     return(
         <>
-        <div className="frame" key={props.id}>
+        <div className="frame" >
         {pictureOrText()}
         <p><button className="loveButton" onClick={loveClick}>Love!</button></p>
         <p>Love it!: {love}</p>
