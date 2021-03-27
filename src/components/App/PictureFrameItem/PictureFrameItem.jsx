@@ -30,13 +30,28 @@ let [picture, setPicture] =  useState(true)
         })
     }
 
+    const deleteClick = () => {
+        if (confirm('Are you sure you want to delete this photo from the database?')) {
+            // Delete it!
+            axios.delete('/gallery/' + props.id).then((response) =>{
+                console.log('Photo was deleted from the database. Response: ',response);
+            }).catch((err) =>{
+                console.log(err)
+            })
+          } else {
+            // Do nothing!
+            console.log('Photo was not deleted.');
+          }
+
+    }
     const [love, setLove] = useState(props.likes)
 
     return(
         <>
         <div className="frame" >
         {pictureOrText()}
-        <p><button className="loveButton" onClick={loveClick}>Love!</button></p>
+        <p><button className="loveButton" onClick={loveClick}>Love!</button>
+        <button onClick={deleteClick}>Delete</button></p>
         <p>Love it!: {love}</p>
         </div>
         </>
