@@ -1,4 +1,7 @@
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+
+
 
 function PictureFrameItem (props){
 
@@ -7,7 +10,7 @@ let [picture, setPicture] =  useState(true)
 
     const togglePicture = () =>{
         picture = setPicture(!picture)
-        pictureOrText()
+        {props.getGallery}
     }
 
     const pictureOrText = () =>{
@@ -19,15 +22,22 @@ let [picture, setPicture] =  useState(true)
     }
 
     const loveClick = () => {
-
+        axios.put('/gallery/like/' + props.id).then((response) =>{
+            console.log('back from put', response)
+            setLove(love + 1)
+        }).catch((err) =>{
+            console.log(err)
+        })
     }
-    
+
+    const [love, setLove] = useState(props.likes)
+
     return(
         <>
-        <div className="frame">
+        <div className="frame" key={props.id}>
         {pictureOrText()}
         <p><button className="loveButton" onClick={loveClick}>Love!</button></p>
-        <p>Love it!: {props.likes}</p>
+        <p>Love it!: {love}</p>
         </div>
         </>
     )

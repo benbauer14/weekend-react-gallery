@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import PictureFrameList from './PictureFrameList/PictureFrameList'
 
-
-
 function App() {
 
 let [ gallery, setGallery] = useState([]);
@@ -27,7 +25,7 @@ const getGallery = () => {
         </header>
         <p>Gallery goes here</p>
         {useEffect(() => {getGallery() }, [])} {/*auto GETs on log */}
-        {<PictureFrameList galleryList={gallery}/>}
+        {<PictureFrameList galleryList={gallery} getGallery={getGallery}/>}
       </div>
 
     );
