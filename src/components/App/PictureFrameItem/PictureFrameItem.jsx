@@ -49,9 +49,10 @@ let [love, setLove] = useState(props.likes)
     return(
         <>
         <div className="frame" >
-        {pictureOrText()}
-        <p><button className="loveButton" onClick={loveClick}>Love!</button>
-        <button onClick={deleteClick}>Delete</button></p>
+        <p>{pictureOrText()}</p>
+        <div class="btn-group gap-1" role="group" aria-label="Basic example">
+            <button className="btn btn-info btn-sm" onClick={loveClick}>Love!</button>
+            <button className="btn btn-danger btn-sm" onClick={deleteClick}>Delete</button></div>
         <p>Love it!: {love}</p>
         </div>
         </>
