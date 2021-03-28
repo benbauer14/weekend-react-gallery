@@ -4,29 +4,35 @@ import './App.css';
 import PictureFrameList from './PictureFrameList/PictureFrameList'
 
 function App() {
-
+//Create set states
 let [ gallery, setGallery] = useState([]);
 let [ url, setUrl] = useState('');
 let [ description, setDescription] = useState([]);
 
+//GET route
 const getGallery = () => {
   axios.get('/gallery').then((response) => {
+    //set gallery to response from database
     setGallery(response.data)
     console.log("in images")
+    //console log response
     console.log(response.data)
   }).catch((err) => {
     console.log(err)
   })
 }
-
+// create new frame
 const addMemory = () => {
+  //build object to send in POST route
   let addMemoryObject = {
     description: description,
     path: url,
     likes: 0
   }
+  //POST route to save data
   axios.post('/gallery', addMemoryObject ).then((response) => {
       console.log("in post", response)
+      //send GET route to refresh page
       getGallery();
   }).catch((err) => {
       console.log(err)
