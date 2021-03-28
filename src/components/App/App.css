@@ -4,10 +4,13 @@
 }
 
 .App-header {
-  background-color: #222;
+  /* background-color: #222; */
   padding: 6em;
   color: white;
   margin-bottom: 1em;
+  background-color: #000000;
+  opacity: 0.8;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #000000 15px ), repeating-linear-gradient( #131bb355, #131bb3 );
 
 }
 
@@ -28,6 +31,7 @@
   float:left;
   padding: 20px;
   border: solid 1px;
+  border-radius: 15px;
 }
 
 img{
@@ -43,6 +47,7 @@ img{
 .gallery{
   margin: 20px;
   position: relative;
+
 }
 .addMemoryFrame {
   float: right;
@@ -55,3 +60,4 @@ img{
 .addMemoryButton{
   float:right;
 }
+
