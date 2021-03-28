@@ -35,6 +35,7 @@ let [love, setLove] = useState(props.likes)
             // Delete it!
             axios.delete('/gallery/' + props.id).then((response) =>{
                 console.log('Photo was deleted from the database. Response: ',response);
+                location.reload()
             }).catch((err) =>{
                 console.log(err)
             })

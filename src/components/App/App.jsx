@@ -27,6 +27,7 @@ const addMemory = () => {
   }
   axios.post('/gallery', addMemoryObject ).then((response) => {
       console.log("in post", response)
+      getGallery();
   }).catch((err) => {
       console.log(err)
   })
@@ -47,7 +48,6 @@ const addMemory = () => {
           </div>
         </header>
         <div className="gallery">
-            <p>Gallery goes here</p>
             {useEffect(() => {getGallery() }, [])} {/*auto GETs on log */}
             {<PictureFrameList galleryList={gallery} getGallery={getGallery}/>}
         </div>
