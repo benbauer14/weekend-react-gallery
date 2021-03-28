@@ -3,15 +3,18 @@
   float: left;
 }
 
+body{
+  background-color: rgb(205, 223, 205);
+}
+
 .App-header {
   /* background-color: #222; */
   padding: 6em;
   color: white;
   margin-bottom: 1em;
-  background-color: #000000;
-  opacity: 0.8;
-  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #000000 15px ), repeating-linear-gradient( #131bb355, #131bb3 );
-
+  background-color: #1f1b1b;
+  opacity: 0.4;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #000000 6px ), repeating-linear-gradient( #00000055, #000000 );
 }
 
 .App-header h1{
@@ -32,6 +35,7 @@
   padding: 20px;
   border: solid 1px;
   border-radius: 15px;
+  background-color: rgb(212, 228, 233);
 }
 
 img{
@@ -46,7 +50,6 @@ img{
 
 .gallery{
   margin: 20px;
-  position: relative;
 
 }
 .addMemoryFrame {

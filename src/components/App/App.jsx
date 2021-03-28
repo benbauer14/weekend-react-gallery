@@ -4,7 +4,7 @@ import './App.css';
 import PictureFrameList from './PictureFrameList/PictureFrameList'
 
 function App() {
-//Create set states
+//Create usestates
 let [ gallery, setGallery] = useState([]);
 let [ url, setUrl] = useState('');
 let [ description, setDescription] = useState([]);
