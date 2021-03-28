@@ -6,6 +6,8 @@ import PictureFrameList from './PictureFrameList/PictureFrameList'
 function App() {
 
 let [ gallery, setGallery] = useState([]);
+let [ url, setUrl] = useState('');
+let [ description, setDescription] = useState([]);
 
 const getGallery = () => {
   axios.get('/gallery').then((response) => {
@@ -17,15 +19,38 @@ const getGallery = () => {
   })
 }
 
+const addMemory = () => {
+  let addMemoryObject = {
+    description: description,
+    path: url,
+    likes: 0
+  }
+  axios.post('/gallery', addMemoryObject ).then((response) => {
+      console.log("in post", response)
+  }).catch((err) => {
+      console.log(err)
+  })
+}
+
     return (
 
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
+          <div className="addMemoryFrame">
+
+              <div className="addMemoryFrameInput">
+              <input type="text" placeholder="url" className="urlInput" onChange={ (event) => setUrl(event.target.value)}/><br></br>
+              <input type="text" placeholder="Description" className="descriptionInput" onChange={(event) => setDescription(event.target.value)}/><br></br>
+              </div>
+              <button onClick={addMemory} className="addMemoryButton btn btn-warning">Add Memory</button>
+          </div>
         </header>
-        <p>Gallery goes here</p>
-        {useEffect(() => {getGallery() }, [])} {/*auto GETs on log */}
-        {<PictureFrameList galleryList={gallery} getGallery={getGallery}/>}
+        <div className="gallery">
+            <p>Gallery goes here</p>
+            {useEffect(() => {getGallery() }, [])} {/*auto GETs on log */}
+            {<PictureFrameList galleryList={gallery} getGallery={getGallery}/>}
+        </div>
       </div>
 
     );

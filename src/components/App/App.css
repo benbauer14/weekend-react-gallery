@@ -5,9 +5,17 @@
 
 .App-header {
   background-color: #222;
-  padding: 2em;
+  padding: 6em;
   color: white;
   margin-bottom: 1em;
+
+}
+
+.App-header h1{
+  position:relative
+}
+.App-header h1, .addMemoryFrame{
+  display: inline;
 }
 
 .App-title {
@@ -20,10 +28,30 @@
   float:left;
   padding: 20px;
   border: solid 1px;
-
 }
 
 img{
   height: 100px;
   width: 100px;
+}
+
+.addMemory{
+  float:right;
+  position:relative;
+}
+
+.gallery{
+  margin: 20px;
+  position: relative;
+}
+.addMemoryFrame {
+  float: right;
+}
+
+.addMemoryFrame input{
+  width: 400px;
+}
+
+.addMemoryButton{
+  float:right;
 }

@@ -40,7 +40,7 @@ router.post('/', (req, res) => {
 
     pool.query(sqlText, [path, description, likes])
         .then((result) => {
-            res.sendStatus(201);
+            res.sendStatus(200);
         })
         .catch((error) => {
             console.log(`Error making database query ${sqlText}`, error);
