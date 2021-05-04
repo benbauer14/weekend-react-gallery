@@ -20,7 +20,7 @@ router.delete('/:id', (req, res) => {
 
 // GET gallery
 router.get('/', (req, res) => {
-    const sqlText = `SELECT * FROM gallery`;
+    const sqlText = `SELECT * FROM gallery ORDER BY id`;
     pool.query(sqlText)
         .then((result) => {
             res.send(result.rows);
@@ -40,12 +40,29 @@ router.post('/', (req, res) => {
 
     pool.query(sqlText, [path, description, likes])
         .then((result) => {
-            res.sendStatus(201);
+            res.sendStatus(200);
         })
         .catch((error) => {
             console.log(`Error making database query ${sqlText}`, error);
             res.sendStatus(500);
         });
 });
+
+router.put('/like/', (req, res) => {
+    // console.log(req.query.id);
+    // console.log(req.query.likes)
+    const likes = req.query.likes
+    const newlikes = likes*1 + 1; 
+    console.log(newlikes) 
+    const sqlText = `UPDATE gallery SET "likes"=$1 WHERE "id"=$2`;
+    pool.query(sqlText, [newlikes, req.query.id])
+    .then((result) => {
+        res.send(String(newlikes));
+    })
+    .catch((error) => {
+        console.log(`Error making database query ${sqlText}`, error);
+        res.sendStatus(500);
+    });
+}); // END PUT Route
 
 module.exports = router;
