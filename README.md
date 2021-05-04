@@ -7,11 +7,17 @@ Create an application that can access a database to load existing uploaded image
 Create an interactive gallery that retrieves, stores and saves data in a database.
 
 Technologies:
+
 Javascript
+
 NodeJS
+
 React
+
 Postgres
+
 HTML
+
 CSS
 
 To use:
