@@ -1,9 +1,15 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# React Picture Gallery
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This project is designed to catalog pictures from my life. The applicataion allows a user to click an image for more information and to like a picture. The data like data is saved to a database.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Technologies: 
+
+Javascript
+React
+Postgres
+Express
+NodeJS
+
+<img src="public/images/Screen Shot 2021-05-04 at 9.13.31 AM.png" />
