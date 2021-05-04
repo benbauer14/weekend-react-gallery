@@ -18,6 +18,3 @@ Technologies:
 - CSS
 
 <img src="public/images/Screen Shot 2021-05-04 at 9.13.31 AM.png" />
-
-
->>>>>>> 75b9bb4adc935daa90475ee441af40a8443c3ba9
