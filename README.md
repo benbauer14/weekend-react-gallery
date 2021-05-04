@@ -9,15 +9,10 @@ Create an interactive gallery that retrieves, stores and saves data in a databas
 Technologies:
 
 Javascript
-
 NodeJS
-
 React
-
 Postgres
-
 HTML
-
 CSS
 
 To use:
